@@ -25,6 +25,7 @@ const checkBox = document.getElementById("checkbox1");
 
 
 
+
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
@@ -173,8 +174,10 @@ function checkRequiredBirthdate(input) {
 
 function checkRequiredQuantity(input) {
   var pattern4 = /^[^@&"()!_$*€£`+=\/;?#]+$/; // regex pour permettre d'écrice un nombre entier egale ou superieur à 0 
-  if (input.value.trim() === '' || input.value.trim() < 0 ) {
+  console.log(Number.isInteger(input.value.trim()*1))
+  if (input.value.trim() === '' || input.value.trim() < 0 || !Number.isInteger(input.value.trim()*1) ) { 
     showerror(input, "Veuillez saisir un nombre ( Saisissez 0 si vous n'avez jamais participé à un tournois");
+    // si le champ est vide ou le nombre est inférieur à 0 ou n'est pas nombre entier, afficher message d'erreur .
   
   }
 
