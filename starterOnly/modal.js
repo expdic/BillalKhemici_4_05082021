@@ -104,7 +104,7 @@ modalbg.addEventListener("submit", (e) => {
 
 
 function checkRequiredName(input) {
-  var pattern1 = /^[a-z ,.'-]+$/i; // regex pour permettre d'écrice un nom ou prénom 
+  var pattern1 = /^[a-z'-]+$/i; // regex pour permettre d'écrice un nom ou prénom 
 
   if ( !pattern1.test(input.value.trim()) ) { // si le champ n"est pas écrit comme le regex demande :
     showerror(input, "Veuillez saisir votre prénom"); // on appelle la fonction showerror qui montre le message 
@@ -120,7 +120,7 @@ function checkRequiredName(input) {
 }
 
 function checkRequiredName2(input) {
-  var pattern1 = /^[a-z ,.'-]+$/i; // regex pour permettre d'écrice un nom ou prénom 
+  var pattern1 = /^[a-z'-]+$/i; // regex pour permettre d'écrice un nom ou prénom 
 
   if ( !pattern1.test(input.value.trim()) ) {
     showerror(input, "Veuillez saisir votre nom");
@@ -139,7 +139,7 @@ function checkRequiredName2(input) {
 // Vérifier le champ email est rempli
 
 function checkRequiredEmail(input) {
-  var pattern2 = /^[a-z0-9.-]{2,}@+[a-z0-9.-]{2,}$/i; // regex pour permettre d'écrice un email
+  var pattern2 = /^[a-z0-9.-]{2,}@+[a-z0-9.-]{2,}.+[a-z]{2,}$/i; // regex pour permettre d'écrice un email
   if (input.value.trim() === '') // si le champ est vide 
     showerror(input, "Veuillez saisir votre adresse mail");
   else if ( !pattern2.test(input.value.trim()) ) {
@@ -158,9 +158,9 @@ function checkRequiredEmail(input) {
 // Vérifier le champ date de naissance est rempli
 
 function checkRequiredBirthdate(input) {
-  var pattern3 = /(19\d\d|20[0-3])(-\d\d){2}/; // regex pour permettre d'écrice une date de naissance 
+  var pattern3 = /^[0-2]{1}[0-9]{1}[/]|[3]{1}[0-1]{1}[/]+[0-1]{1}[0-9]{1}[/]+[0-2]{1}[0-9]{3}$/i; // regex pour permettre d'écrice une date de naissance 
   if (!pattern3.test(input.value.trim())) {
-    showerror(input, "Veuillez saisir votre date de naissance");
+    showerror(input, "Veuillez saisir votre date de naissance au format jj/mm/aaaa");
   }
   else {
     const modalvalidation = input.parentElement;
@@ -173,8 +173,6 @@ function checkRequiredBirthdate(input) {
 // Vérifier le champ de nombre de tournois est rempli
 
 function checkRequiredQuantity(input) {
-  var pattern4 = /^[^@&"()!_$*€£`+=\/;?#]+$/; // regex pour permettre d'écrice un nombre entier egale ou superieur à 0 
-  console.log(Number.isInteger(input.value.trim()*1))
   if (input.value.trim() === '' || input.value.trim() < 0 || !Number.isInteger(input.value.trim()*1) ) { 
     showerror(input, "Veuillez saisir un nombre ( Saisissez 0 si vous n'avez jamais participé à un tournois");
     // si le champ est vide ou le nombre est inférieur à 0 ou n'est pas nombre entier, afficher message d'erreur .
