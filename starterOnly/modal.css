@@ -82,9 +82,34 @@ img {
     float: right;
     display: block;
   }
-}
 
-@media screen and (max-width: 768px) {
+  .topnav.responsive {
+    position: relative;
+  }
+
+
+
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .topnav a {
+    display: none;
+  }
+
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+
   .topnav.responsive {
     position: relative;
   }
@@ -104,17 +129,7 @@ img {
 
 
 
-@media screen and (max-width: 540px) {
-  .topnav a {
-    display: none;
-  }
 
-  .topnav a.icon {
-    float: right;
-    display: block;
-    margin-top: -15px;
-  }
-}
 
 main {
   font-size: 130%;
@@ -527,52 +542,6 @@ footer {
   margin: 0 20px;
 }
 
-@media screen and (max-width: 800px) {
-  .hero-section {
-    display: block;
-    box-shadow: unset;
-  }
-
-  .hero-content {
-    background: #fff;
-    color: #000;
-    padding: 20px;
-  }
-
-  .hero-content::after {
-    content: unset;
-  }
-
-  .hero-content .btn-signup {
-    display: none;
-  }
-
-  .hero-headline {
-    font-size: 4.5rem;
-    white-space: normal;
-  }
-
-  .hero-text {
-    width: unset;
-    font-size: 1.5rem;
-  }
-
-  .hero-img img {
-    border-radius: 10px;
-    margin-top: 40px;
-  }
-
-  .hero-section>.btn-signup {
-    display: block;
-    margin: 32px auto 10px;
-    padding: 12px 35px;
-  }
-
-  .copyrights {
-    margin-top: 50px;
-    text-align: center;
-  }
-}
 
 
 
@@ -754,34 +723,9 @@ img {
   display: none;
 }
 
-@media screen and (max-width: 768px) {
-  .topnav a {
-    display: none;
-  }
 
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
-}
 
-@media screen and (max-width: 768px) {
-  .topnav.responsive {
-    position: relative;
-  }
 
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-}
 
 
 
@@ -1209,6 +1153,16 @@ footer {
 }
 
 @media screen and (max-width: 800px) {
+  .main-navbar {
+    margin-top: 1rem;
+  }
+
+  .header-logo img {
+    width: 160px;
+    margin-left: 1rem;
+    margin-top: 1rem;
+  }
+
   .hero-section {
     display: block;
     box-shadow: unset;
@@ -1218,6 +1172,7 @@ footer {
     background: #fff;
     color: #000;
     padding: 20px;
+    min-width: auto;
   }
 
   .hero-content::after {
@@ -1229,13 +1184,19 @@ footer {
   }
 
   .hero-headline {
-    font-size: 4.5rem;
+    width: 100%;
+    flex-wrap: wrap;
+    font-size: 2.4rem;
     white-space: normal;
+    margin-left: -1rem;
   }
 
   .hero-text {
     width: unset;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
+    margin-left: -1rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
   }
 
   .hero-img img {

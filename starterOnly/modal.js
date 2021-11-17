@@ -139,7 +139,7 @@ function checkRequiredName2(input) {
 // Vérifier le champ email est rempli
 
 function checkRequiredEmail(input) {
-  var pattern2 = /^[a-z0-9.-]{2,}@+[a-z0-9.-]{2,}.+[a-z]{2,}$/i; // regex pour permettre d'écrice un email
+  var pattern2 = /^[a-z0-9.-]{2,}@+[a-z0-9-.]{2,}.+[a-z]{2,}$/i; // regex pour permettre d'écrice un email
   if (input.value.trim() === '') // si le champ est vide 
     showerror(input, "Veuillez saisir votre adresse mail");
   else if ( !pattern2.test(input.value.trim()) ) {
@@ -158,7 +158,9 @@ function checkRequiredEmail(input) {
 // Vérifier le champ date de naissance est rempli
 
 function checkRequiredBirthdate(input) {
-  var pattern3 = /^[0-2]{1}[0-9]{1}[/]|[3]{1}[0-1]{1}[/]+[0-1]{1}[0-9]{1}[/]+[0-2]{1}[0-9]{3}$/i; // regex pour permettre d'écrice une date de naissance 
+  console.log(input.value)
+  // var pattern3 = /^[0-2]{1}[0-9]{1}[-]|[3]{1}[0-1]{1}[-]+[0-1]{1}[0-9]{1}[-]+[0-2]{1}[0-9]{3}$/i; 
+  var pattern3 = /^[0-2]{1}[0-9]{3}[-]+[0-2]{1}[0-9]{1}[-]|[3]{1}[0-1]{1}[-]+[0-1]{1}[0-9]{1}$/i; // regex pour permettre d'écrice une date de naissance
   if (!pattern3.test(input.value.trim())) {
     showerror(input, "Veuillez saisir votre date de naissance au format jj/mm/aaaa");
   }
